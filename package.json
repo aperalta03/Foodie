@@ -15,7 +15,9 @@
     "@mui/material": "^5.16.7",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "typeface-amatic-sc": "^1.1.13",
+    "typeface-indie-flower": "^1.1.13"
   },
   "devDependencies": {
     "eslint": "^8",
