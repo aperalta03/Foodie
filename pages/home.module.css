@@ -1,5 +1,6 @@
 /* Main Container */
 .Page {
+    
     display: flex;
     flex-direction: column;
     min-height: 200vh;
@@ -13,10 +14,13 @@
     overflow-y: auto;
     position: relative;
 }
+.Page::-webkit-scrollbar {
+    display: none;
+}
 .mainContainer {
     height: 100%;
     width: 100%;
-    background-color: var(--background-color);
+    background-color: transparent;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -86,7 +90,6 @@
 .title {
     font-size: 6rem;
     color: black;
-        
     font-style: italic;
     display: flex;
     flex-direction: column;
@@ -94,7 +97,7 @@
 .line {
     display: flex;
     gap: 5px;
-    margin-left: -10px;
+    margin-left: 12.5px;
 }
 .indented {
     margin-left: 100px;
@@ -174,7 +177,7 @@
 }
 /* Profile Picture */
 .profilePicture {
-    width: 70%;
+    width: 50%;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -231,4 +234,144 @@
     display: flex;
     gap: 2vw;
     margin-left: 30%;
+}
+/* User Button */
+.userButton {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20vw;
+}
+/* Recipes */
+.recipesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 25vh;
+    padding-bottom: 5vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: 100%;
+}
+.recipeCard {
+    flex: 1 1 calc(25% - 40px);
+    max-width: calc(25% - 40px);
+    position: relative;
+    width: 285px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    opacity: 1;
+}
+.recipeVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 1;
+    transition: filter 0.3s ease;
+}
+.recipeContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.recipeCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.recipeCard:hover .recipeVideo {
+    filter: blur(3px);
+}
+.recipeCard:hover .recipeContent {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 480px) {
+    .title {
+        font-size: 2.5rem; /* Reduce font size */
+        margin-top: 20px; /* Add spacing above the title */
+        margin-bottom: 15px; /* Add spacing below the title */
+        text-align: center; /* Center the title */
+        position: relative;
+        z-index: 2; /* Ensure title is above background elements */
+    }
+    .socialsContainer {
+        gap: 15px; /* Increase gap between social icons */
+        margin-bottom: 30px; /* Add spacing below socials */
+        justify-content: center; /* Center the social icons */
+        position: relative;
+        z-index: 2; /* Ensure social icons are above background elements */
+    }
+    .socialBubble {
+        height: 40px; /* Smaller social bubbles */
+        width: 40px;
+    }
+    .logo {
+        width: 60px; /* Adjust logo size for better visibility */
+        height: 60px;
+        margin-bottom: 15px; /* Adjust spacing below the logo */
+        display: block;
+        margin-left: auto;
+        margin-right: auto; /* Center the logo */
+        position: relative;
+        z-index: 2; /* Ensure logo is above background elements */
+    }
+    .logoNavbar {
+        width: 50px;
+        height: 50px;
+    }
+    .navbar {
+        opacity: 0; /* Start hidden */
+        transform: translateY(-100%);
+        transition: opacity 0.5s ease-in-out, transform 0.01s ease-in-out;
+        z-index: 3; /* Ensure navbar is above everything else */
+    }
+    .socialsNavbarContainer {
+        opacity: 0;
+    }
+    .userButton {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .navbarVisible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* Remove profile picture entirely */
+    .profilePicture {
+        display: none; /* Ensure profile picture is not shown on mobile */
+    }
+
+    /* Ensure proper layout and visibility of landing page elements */
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Full height for centering */
+        padding: 0 10px; /* Add padding for better layout on mobile */
+        position: relative;
+    }
 }

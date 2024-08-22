@@ -1,0 +1,57 @@
+.userButtonContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personIcon {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.menu {
+    position: absolute;
+    top: 50px; /* Adjust according to your design */
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 100;
+    min-width: 200px;
+    text-align: left;
+}
+
+.navButton {
+    color: var(--primary-color);
+    text-transform: none;
+    justify-content: flex-start;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.cartButton {
+    color: var(--primary-color);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.cartButton:hover,
+.navButton:hover {
+    background-color: var(--primary-color-light);
+    transform: scale(1.05);
+}
+
+.cartIcon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}

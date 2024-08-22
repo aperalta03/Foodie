@@ -1,0 +1,38 @@
+[
+    {
+        "title":"Delicia Fresca de Lentejas",
+        "description":"Description",
+        "video":"/recipes/R1_deliciafresca-lentejas.mp4",
+        "recipe":""
+    },
+    {
+        "title":"Ensalada de Lentejas",
+        "description":"Description",
+        "video":"/recipes/R2_ensalada-lentejas.mp4",
+        "recipe":""
+    },
+    {
+        "title":"Chaufa de Quinua",
+        "description":"Description",
+        "video":"/recipes/R3_chaufa-quinua.mp4",
+        "recipe":""
+    },
+    {
+        "title":"Tortitas de Quinua",
+        "description":"Description",
+        "video":"/recipes/R4_tortitas-quinua.mp4",
+        "recipe":""
+    },
+    {
+        "title":"Ensalada de Quinua",
+        "description":"Description",
+        "video":"/recipes/R5_ensalada-quinua.mp4",
+        "recipe":""
+    },
+    {
+        "title":"Postre de Quinua",
+        "description":"Description",
+        "video":"/recipes/R6_postre-quinua.mp4",
+        "recipe":""
+    }
+]

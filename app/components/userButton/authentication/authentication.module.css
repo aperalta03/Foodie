@@ -1,0 +1,60 @@
+.authContainer {
+    display: flex;
+    flex-direction: row;
+}
+.navButton {
+    color: white;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    text-transform: none;
+}
+.navButton:hover {
+    background-color: var(--primaryfade-color);
+}
+.dialogPaper {
+    border-radius: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border: solid 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.dialogTitleRoot {
+    color: var(--text-color);
+}
+.dialogActionsRoot {
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+.googleButton {
+    width: 250px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+.googleButton:hover {
+    background-color: var(--primaryfade-color);
+}
+.cancelButton {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+.cancelButton:hover {
+    background-color: var(--primaryfade-color);
+}
+.loginButton {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+.loginButton:hover {
+    background-color: var(--primaryfade-color);
+}
+.registerButton {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+.registerButton:hover {
+    background-color: var(--primaryfade-color);
+}
