@@ -19,6 +19,10 @@
     opacity: 1;
     transform: translateY(0);
 }
+.sticky {
+    opacity: 1;
+}
+/* Logo */
 .logoNavbar {
     width: 100px;
     height: 100px;
@@ -28,14 +32,67 @@
 .logoNavbar:hover {
     transform: scale(1.2);
 }
+/* Socials */
 .socialsNavbarContainer {
     display: flex;
     gap: 2vw;
     margin-left: 30%;
 }
-.sticky {
-    opacity: 1;
+.socialBubble {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.socialBubble::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    transform: scaleX(0) scaleY(0);
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+    z-index: 1;
+}
+.socialBubble:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+.socialBubble:hover::before {
+    transform: scaleX(1);
+}
+.socialBubble .socialIcon {
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+.socialBubble:hover .socialIcon {
+    color: white;
+    animation: spin 1s ease-in-out;
+}
+.socialIcon {
+    height: 50%;
+    width: 50%;
+    color: var(--primary-color);
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* User Button */
 .userButton {
     display: flex;
     flex-direction: row;

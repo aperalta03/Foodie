@@ -2,7 +2,6 @@
 .Page {
     display: flex;
     flex-direction: column;
-    min-height: 200vh;
     background: var(--background-color);
     background-image: url('/parallax.png');
     background-attachment: fixed;
@@ -165,7 +164,6 @@
     width: 50%;
     color: var(--primary-color);
 }
-/* Spin animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);

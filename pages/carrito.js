@@ -16,14 +16,13 @@ const items = [
         image: '/recipe2.jpg',
         price: '$15',
     },
-    // Add more items as needed
 ];
 
 const Carrito = () => {
     const router = useRouter();
 
     const handleBackClick = () => {
-        router.back(); // Navigate to the previous page
+        router.back();
     };
 
     return (
