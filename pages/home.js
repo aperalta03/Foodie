@@ -1,35 +1,15 @@
-
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Button, Link } from '@mui/material';
+import { Box } from '@mui/material';
 
-import Image from 'next/image';
-
-import pfp from '../public/pfp3.jpg';
-import logo from '../public/logo.png';
+import Navbar from '../app/components/navbar/navbar';
+import LandingPage from '../app/components/landingPage/landingPage';
+import Recipes from '../app/components/recipes/recipes';
 
 import styles from './home.module.css';
 
-import socials from '../app/data/socials.json';
 import recipes from '../app/data/recipes.json';
 
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import EmailIcon from '@mui/icons-material/Email';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-
-import UserButtons from '@/app/components/userButton/userButton';
-
-const iconMap = {
-    'youtube': YouTubeIcon,
-    'instagram': InstagramIcon,
-    'email': EmailIcon,
-    'whatsapp': WhatsAppIcon,
-    'tiktok': LibraryMusicIcon,
-}
-
 const Home = () => {
-
     const [navbarVisible, setNavbarVisible] = useState(false);
     const [sticky, setSticky] = useState(false);
 
@@ -53,84 +33,9 @@ const Home = () => {
 
     return (
         <Box className={styles.Page}>
-        {/* Landing Page */}
-            <Box className={styles.mainContainer}>  
-                <Box className={styles.ribbon}></Box>
-                <Box className={styles.contentContainer}>
-                    <Image src={logo} alt='Marina Espinoza' className={styles.logo} width={100} height={100}/>
-                    <Box className={styles.textContainer}>
-                        <Box className={styles.title}>
-                            <Box className={styles.line}>
-                                {"Marinas".split('').map((char, index) => (
-                                    <Box key={index} className={styles.letter}>{char}</Box>
-                                ))}
-                            </Box>
-                            <Box className={`${styles.line} ${styles.indented}`}>
-                                {"Foodie".split('').map((char, index) => (
-                                    <Box key={index} className={styles.letter}>{char}</Box>
-                                ))}
-                            </Box>
-                        </Box>
-                    </Box>
-                    <Box className={styles.socialsContainer}>
-                        {socials.map((social) => {
-                            const IconComponent = iconMap[social.platform];
-                            return (
-                                <a key={social.platform} href={social.link}>
-                                    <Box className={styles.socialBubble}>
-                                        <IconComponent className={styles.socialIcon}/>
-                                    </Box>
-                                </a>
-                            );
-                        })}
-                    </Box>
-                </Box>
-                <Box className={styles.profilePicture}>
-                    <Image className={styles.pfp} src={pfp} alt="Marina Espinoza" />
-                </Box>
-            </Box>
-        {/* Content */}
-            {/* Navbar */}
-            <Box className={`${styles.navbar} ${navbarVisible ? styles.navbarVisible : ''}`}>
-                <Image src={logo} alt='Marina Espinoza' className={`${styles.logoNavbar} ${sticky ? styles.sticky : ''}`} width={100} height={100}/>
-                <Box className={`${styles.socialsNavbarContainer} ${sticky ? styles.sticky : ''}`}>
-                    {socials.map((social) => {
-                        const IconComponent = iconMap[social.platform];
-                        return (
-                            <a key={social.platform} href={social.link}>
-                                <Box className={styles.socialBubble}>
-                                    <IconComponent className={styles.socialIcon}/>
-                                </Box>
-                            </a>
-                        );
-                    })}
-                </Box>
-                <Box className={styles.userButton}>
-                    <UserButtons />
-                </Box>        
-            </Box>
-            {/* Recipe List */}
-            <Box className={styles.recipesContainer}>
-                {recipes.map((recipe) => {
-                    return (
-                        <Box 
-                            key={recipe.title} 
-                            className={styles.recipeCard}
-                            onMouseOver={(e) => e.currentTarget.querySelector('video').play()}
-                            onMouseOut={(e) => e.currentTarget.querySelector('video').pause()}
-                        >
-                            <Box className={styles.backgroundBlur}></Box>
-                            <video className={styles.recipeVideo} muted loop playsInline>
-                                <source src={recipe.video} type="video/mp4" alt="Marina Espinoza"/>
-                                Your browser does not support the video tag.
-                            </video>
-                            <Box className={styles.recipeContent}>
-                                <Typography variant="h4">{recipe.title}</Typography>
-                            </Box>
-                        </Box>
-                    );
-                })}
-            </Box>
+            <Navbar navbarVisible={navbarVisible} sticky={sticky} />
+            <LandingPage />
+            <Recipes recipes={recipes} />
         </Box>
     );
 };
