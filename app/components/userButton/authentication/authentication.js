@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { Box, Button, Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
+import { createUserWithEmailAndPassword } from 'firebase/auth'; // Import Firebase Auth method
+import { auth } from '@/firebase'; // Adjust the import based on your file structure
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'; // Import Google Auth provider and signIn method
+
 import styles from './authentication.module.css';
 
 const Authentication = () => {
     const [openLogin, setOpenLogin] = useState(false);
     const [openRegister, setOpenRegister] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleLoginOpen = () => setOpenLogin(true);
     const handleLoginClose = () => setOpenLogin(false);
@@ -13,19 +19,35 @@ const Authentication = () => {
     const handleRegisterOpen = () => setOpenRegister(true);
     const handleRegisterClose = () => setOpenRegister(false);
 
-    const handleLogin = () => {
-        // Placeholder function for back-end login logic
-        console.log("Login function called");
+    const handleRegister = async () => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            console.log('User registered:', userCredential.user);
+            handleRegisterClose(); // Close the dialog after successful registration
+        } catch (error) {
+            console.error('Error registering user:', error);
+        }
     };
 
-    const handleRegister = () => {
-        // Placeholder function for back-end registration logic
-        console.log("Register function called");
+    const handleLogin = async () => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            console.log('User logged in:', userCredential.user);
+            handleLoginClose(); // Close the dialog after successful login
+        } catch (error) {
+            console.error('Error logging in user:', error);
+        }
     };
 
-    const handleGoogleAuth = () => {
-        // Placeholder function for Google authentication
-        console.log("Google Auth function called");
+    const handleGoogleAuth = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            const result = await signInWithPopup(auth, provider);
+            console.log('User signed in with Google:', result.user);
+            handleLoginClose(); // Close the dialog after successful login
+        } catch (error) {
+            console.error('Error with Google sign-in:', error);
+        }
     };
 
     return (
@@ -44,6 +66,8 @@ const Authentication = () => {
                         type="email"
                         fullWidth
                         variant="outlined"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         sx={{
                             color: 'var(--text-color)',
                             '& .MuiOutlinedInput-root': {
@@ -71,6 +95,8 @@ const Authentication = () => {
                         type="password"
                         fullWidth
                         variant="outlined"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         sx={{
                             color: 'var(--text-color)',
                             '& .MuiOutlinedInput-root': {
@@ -116,6 +142,8 @@ const Authentication = () => {
                         type="email"
                         fullWidth
                         variant="outlined"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         sx={{
                             color: 'var(--text-color)',
                             '& .MuiOutlinedInput-root': {
@@ -143,6 +171,8 @@ const Authentication = () => {
                         type="password"
                         fullWidth
                         variant="outlined"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         sx={{
                             color: 'var(--text-color)',
                             '& .MuiOutlinedInput-root': {

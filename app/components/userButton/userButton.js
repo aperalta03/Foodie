@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import { Box, Button, IconButton } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Box, Button } from '@mui/material';
 import { useRouter } from 'next/navigation';
-
-import PersonIcon from '@mui/icons-material/Person';
+import { onAuthStateChanged } from 'firebase/auth';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Authentication from './authentication/authentication';
+import { auth } from '@/firebase'; // Ensure you import your Firebase auth object
 
 import styles from './userButton.module.css';
 
 const UserButtons = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [user, setUser] = useState(null); // State to track authenticated user
     const router = useRouter();
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setUser(user); // Update the user state when authentication state changes
+        });
+
+        return () => unsubscribe(); // Clean up the subscription on unmount
+    }, []);
 
     const handleCartClick = () => {
         console.log("Shopping Cart clicked!");
@@ -22,25 +30,21 @@ const UserButtons = () => {
         router.push('/user-recipes');
     };
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
     return (
         <Box className={styles.userButtonContainer}>
-            <IconButton onClick={toggleMenu}>
-                <PersonIcon className={styles.personIcon} />
-            </IconButton>
-            {menuOpen && (
-                <Box className={styles.menu}>
-                    <Authentication />
+            {user ? (
+                // If the user is logged in, show these buttons
+                <>
                     <Button className={styles.navButton} onClick={handleRecipeClick}>
                         My Recipes
                     </Button>
                     <Button className={styles.cartButton} onClick={handleCartClick}>
                         <ShoppingCartOutlinedIcon className={styles.cartIcon} />
                     </Button>
-                </Box>
+                </>
+            ) : (
+                // If the user is not logged in, show the authentication options
+                <Authentication />
             )}
         </Box>
     );
