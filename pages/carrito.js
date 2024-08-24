@@ -2,16 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { doc, updateDoc, onSnapshot, arrayRemove } from 'firebase/firestore';
+import { db, auth } from '../firebase';
 import styles from './carrito.module.css';
 
 const Carrito = () => {
     const [cart, setCart] = useState([]);
+    const [user] = useAuthState(auth);
     const router = useRouter();
 
     useEffect(() => {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        setCart(cartItems);
-    }, []);
+        if (user) {
+            const userCartRef = doc(db, 'users', user.uid);
+            const unsubscribe = onSnapshot(userCartRef, (doc) => {
+                setCart(doc.data()?.cart || []);
+            });
+
+            return () => unsubscribe();
+        }
+    }, [user]);
 
     const handleBackClick = () => {
         router.back();
@@ -19,6 +29,15 @@ const Carrito = () => {
 
     const handleCheckout = () => {
         console.log('Proceed to checkout');
+    };
+
+    const handleRemoveItem = async (item) => {
+        if (user) {
+            const userCartRef = doc(db, 'users', user.uid);
+            await updateDoc(userCartRef, {
+                cart: arrayRemove(item)
+            });
+        }
     };
 
     return (
@@ -36,6 +55,13 @@ const Carrito = () => {
                             <Box className={styles.itemDetails}>
                                 <Typography variant="h6" className={styles.itemTitle}>{item.title}</Typography>
                                 <Typography variant="body1" className={styles.itemPrice}>{item.price || '$0'}</Typography>
+                                <Button
+                                    variant="contained"
+                                    color="secondary"
+                                    onClick={() => handleRemoveItem(item)}
+                                >
+                                    Remove
+                                </Button>
                             </Box>
                         </Box>
                     ))
