@@ -6,7 +6,6 @@ import LandingPage from '../app/components/landingPage/landingPage';
 import Recipes from '../app/components/recipes/recipes';
 
 import styles from './home.module.css';
-
 import recipes from '../app/data/recipes.json';
 
 const Home = () => {

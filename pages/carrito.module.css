@@ -12,7 +12,6 @@
     min-height: 100vh;
 }
 
-/* Header with Volver Button */
 .header {
     display: flex;
     justify-content: flex-start;
@@ -27,11 +26,6 @@
     font-size: 1.25rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.volverButton:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
 }
 
 .cartItems {
@@ -99,33 +93,4 @@
 .checkoutButton:hover {
     background-color: var(--secondary-color);
     transform: scale(1.1);
-}
-
-@media only screen and (max-width: 480px) {
-    .carritoPage {
-        flex-direction: column;
-        padding: 10vh 2vw;
-    }
-
-    .cartItems {
-        padding-right: 0;
-    }
-
-    .cartItem {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cartImage {
-        margin-bottom: 10px;
-    }
-
-    .checkoutContainer {
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .checkoutButton {
-        width: 100%;
-    }
 }
