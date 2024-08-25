@@ -1,38 +1,56 @@
 [
     {
         "title":"Delicia Fresca de Lentejas",
-        "description":"Lucas se comio a Vania GAAAAAAAAAAAA",
+        "description":"Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description ",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R1_deliciafresca-lentejas.png",
         "video":"/recipes/R1_deliciafresca-lentejas.mp4",
-        "recipe": "/recipes/Stephen_Huang_Resume.pdf"
+        "recipe": "/recipes/R1_deliciafresca-lentejas.pdf"
     },
     {
         "title":"Ensalada de Lentejas",
         "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R2_ensalada-lentejas.png",
         "video":"/recipes/R2_ensalada-lentejas.mp4",
-        "recipe":""
+        "recipe":"/recipes/R2_ensalada-lentejas.pdf"
     },
     {
         "title":"Chaufa de Quinua",
         "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R3_chaufa-quinua.png",
         "video":"/recipes/R3_chaufa-quinua.mp4",
-        "recipe":""
+        "recipe":"/recipes/R3_chaufa-quinua.pdf"
     },
     {
         "title":"Tortitas de Quinua",
         "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R4_tortitas-quinua.png",
         "video":"/recipes/R4_tortitas-quinua.mp4",
-        "recipe":""
+        "recipe":"/recipes/R4_tortitas-quinua.pdf"
     },
     {
         "title":"Ensalada de Quinua",
         "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R5_ensalada-quinua.png",
         "video":"/recipes/R5_ensalada-quinua.mp4",
-        "recipe":""
+        "recipe":"/recipes/R5_ensalada-quinua.pdf"
     },
     {
         "title":"Postre de Quinua",
         "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R6_postre-quinua.png",
         "video":"/recipes/R6_postre-quinua.mp4",
-        "recipe":""
+        "recipe":"/recipes/R6_postre-quinua.pdf"
     }
 ]

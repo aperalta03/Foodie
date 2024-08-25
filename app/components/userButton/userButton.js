@@ -1,49 +1,81 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import Authentication from './authentication/authentication';
-import { auth } from '@/firebase'; // Ensure you import your Firebase auth object
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+
+import { auth } from '@/firebase';
 
 import styles from './userButton.module.css';
 
+import Authentication from './authentication/authentication';
+
 const UserButtons = () => {
-    const [user, setUser] = useState(null); // State to track authenticated user
+    const [user, setUser] = useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const router = useRouter();
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setUser(user); // Update the user state when authentication state changes
+            setUser(user);
         });
 
-        return () => unsubscribe(); // Clean up the subscription on unmount
+        return () => unsubscribe();
     }, []);
 
-    const handleCartClick = () => {
-        console.log("Shopping Cart clicked!");
-        router.push('/carrito');
+    const handleMenuOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
     };
 
     const handleRecipeClick = () => {
-        console.log("My Recipes clicked!");
         router.push('/user-recipes');
+        handleMenuClose();
+    };
+
+    const handleCartClick = () => {
+        router.push('/carrito');
+        handleMenuClose();
+    };
+
+    const handleLogout = async () => {
+        await signOut(auth);
+        router.push('/');
+        handleMenuClose();
     };
 
     return (
         <Box className={styles.userButtonContainer}>
             {user ? (
-                // If the user is logged in, show these buttons
                 <>
-                    <Button className={styles.navButton} onClick={handleRecipeClick}>
-                        My Recipes
-                    </Button>
-                    <Button className={styles.cartButton} onClick={handleCartClick}>
-                        <ShoppingCartOutlinedIcon className={styles.cartIcon} />
-                    </Button>
+                    <IconButton onClick={handleMenuOpen} className={styles.personIcon}>
+                        <AccountCircleIcon />
+                    </IconButton>
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                        classes={{ paper: styles.menu }}
+                    >
+                        <MenuItem onClick={handleRecipeClick} className={styles.navButton}>
+                            <MenuBookIcon className={styles.cartIcon} /> Mis Recetas
+                        </MenuItem>
+                        <MenuItem onClick={handleCartClick} className={styles.cartButton}>
+                            <ShoppingCartOutlinedIcon className={styles.cartIcon} /> Carrito
+                        </MenuItem>
+                        <MenuItem onClick={handleLogout} className={styles.navButton}>
+                            <ArrowBackIcon className={styles.cartIcon} /> Logout
+                        </MenuItem>
+                    </Menu>
                 </>
             ) : (
-                // If the user is not logged in, show the authentication options
                 <Authentication />
             )}
         </Box>

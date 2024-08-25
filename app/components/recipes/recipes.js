@@ -17,14 +17,14 @@ const Recipes = ({ recipes = [] }) => {
                     key={recipe.title}
                     className={styles.recipeCard}
                     onClick={() => handleRecipeClick(recipe.title)}
-                    onMouseOver={(e) => e.currentTarget.querySelector('video').play()}
-                    onMouseOut={(e) => e.currentTarget.querySelector('video').pause()}
                 >
                     <Box className={styles.backgroundBlur}></Box>
-                    <video className={styles.recipeVideo} muted loop playsInline>
-                        <source src={recipe.video} type="video/mp4" alt={recipe.title} />
-                        Your browser does not support the video tag.
-                    </video>
+                    <Box
+                        component="img"
+                        src={recipe.image}
+                        alt={recipe.title}
+                        className={styles.recipeImage}
+                    />
                     <Box className={styles.recipeContent}>
                         <Typography variant="h4">{recipe.title}</Typography>
                     </Box>

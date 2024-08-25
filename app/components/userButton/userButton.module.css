@@ -4,50 +4,43 @@
     align-items: center;
     justify-content: center;
 }
-
 .personIcon {
+    width: 100%;
+    height: auto;
     color: var(--primary-color);
-    font-size: 2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
+.personIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
 .menu {
     position: absolute;
-    top: 50px; /* Adjust according to your design */
+    top: 50px; /* Adjust as needed */
     right: 0;
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
     z-index: 100;
     min-width: 200px;
     text-align: left;
 }
 
-.navButton {
+.navButton,
+.cartButton {
     color: var(--primary-color);
     text-transform: none;
     justify-content: flex-start;
     padding: 8px 16px;
     width: 100%;
-}
-
-.cartButton {
-    color: var(--primary-color);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 8px 16px;
-    width: 100%;
 }
 
-.cartButton:hover,
-.navButton:hover {
-    background-color: var(--primary-color-light);
+.navButton:hover,
+.cartButton:hover {
+    background-color: transparent;
     transform: scale(1.05);
 }
 

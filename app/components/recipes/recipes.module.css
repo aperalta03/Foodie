@@ -24,7 +24,7 @@
     transition: transform 0.3s ease, filter 0.3s ease;
     opacity: 1;
 }
-.recipeVideo {
+.recipeImage {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,7 +58,7 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.recipeCard:hover .recipeVideo {
+.recipeCard:hover .recipeImage {
     filter: blur(3px);
 }
 .recipeCard:hover .recipeContent {

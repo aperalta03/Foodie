@@ -1,10 +1,14 @@
+import React from 'react';
+import { Box, Typography, IconButton } from '@mui/material';
 import { useRouter } from 'next/router';
-import { Box, Typography, Button } from '@mui/material';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, setDoc, updateDoc, arrayUnion, getDoc } from 'firebase/firestore';
 import { db, auth } from '../../firebase';
 import recipes from '../../app/data/recipes.json';
 import styles from './recipe.module.css';
+
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const RecipeDetail = () => {
     const router = useRouter();
@@ -23,15 +27,12 @@ const RecipeDetail = () => {
             const docSnap = await getDoc(userCartRef);
 
             if (docSnap.exists()) {
-                // If the document exists, update the 'cart' field
                 await updateDoc(userCartRef, {
                     cart: arrayUnion(recipe)
                 });
             } else {
-                // If the document does not exist, create it with the 'cart' field
                 await setDoc(userCartRef, {
                     cart: [recipe],
-                    // Add any other fields you want to initialize here
                     payment: {},
                     recipes: [],
                 });
@@ -49,28 +50,47 @@ const RecipeDetail = () => {
 
     return (
         <Box className={styles.recipeContainer}>
+            {/* Left Pane for Video */}
             <Box className={styles.leftPane}>
-                <Button onClick={handleBack} className={styles.addToCartButton}>Volver</Button>
-                <Typography variant="h3">{recipe.title}</Typography>
-                <Typography variant="body1" className={styles.description}>
-                    {recipe.description}
-                </Typography>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={styles.addToCartButton}
-                    onClick={handleAddToCart}
-                >
-                    Add to Cart
-                </Button>
+                <video className={styles.recipeVideo} autoPlay loop muted playsInline>
+                    <source src={recipe.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </Box>
+            {/* Right Pane for Recipe Details */}
             <Box className={styles.rightPane}>
-                <Box className={styles.pdfBlur}>
-                    <img
-                        src={`${recipe.recipe.replace('.pdf', '_preview.jpg')}`}
-                        alt="PDF Preview"
-                        className={styles.pdfPreview}
-                    />
+                <Box className={styles.recipeDetails}>
+                    <Typography className={styles.title}>{recipe.title}</Typography>
+                    <Typography className={styles.calories}>
+                        {recipe.calories}
+                    </Typography>
+                    <Box className={styles.tagsContainer}>
+                        {recipe.tags.map((tag, index) => (
+                            <Typography key={index} className={styles.tag}>
+                                {tag}
+                            </Typography>
+                        ))}
+                    </Box>
+                    <Typography className={styles.description}>
+                        {recipe.description}
+                    </Typography>
+                    {/* Buttons Container */}
+                    <Box className={styles.buttonsContainer}>
+                        <IconButton 
+                            color="default"
+                            onClick={handleBack} 
+                            className={styles.volverButton}
+                        >
+                            <ArrowBackIcon />
+                        </IconButton> 
+                        <IconButton
+                            color="primary"
+                            className={styles.addToCartButton}
+                            onClick={handleAddToCart}
+                        >
+                            <AddShoppingCartIcon />
+                        </IconButton>
+                    </Box>
                 </Box>
             </Box>
         </Box>

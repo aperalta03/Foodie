@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import logo from '../../../public/logo.png';
-import pfp from '../../../public/pfp3.jpg';
+import pfp from '../../../public/pfp3.png';
 
 import socials from '../../data/socials.json';
 

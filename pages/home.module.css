@@ -12,6 +12,17 @@
     overflow-y: auto;
     position: relative;
 }
+/* For WebKit browsers (e.g., Chrome, Safari) */
 .Page::-webkit-scrollbar {
     display: none;
+}
+
+/* For Firefox */
+.Page {
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* For Internet Explorer and Edge */
+.Page {
+    -ms-overflow-style: none; /* For IE and Edge */
 }
