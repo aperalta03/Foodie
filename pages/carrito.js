@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, IconButton, Button } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { doc, updateDoc, onSnapshot, arrayRemove } from 'firebase/firestore';
 import { db, auth } from '../firebase';
+
 import styles from './carrito.module.css';
+
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const Carrito = () => {
     const [cart, setCart] = useState([]);
@@ -43,9 +47,13 @@ const Carrito = () => {
     return (
         <Box className={styles.carritoPage}>
             <Box className={styles.header}>
-                <Button className={styles.volverButton} onClick={handleBackClick}>
-                    Volver
-                </Button>
+                <IconButton 
+                    color="default"
+                    onClick={handleBackClick} 
+                    className={styles.volverButton}
+                >
+                    <ArrowBackIcon />
+                </IconButton> 
             </Box>
             <Box className={styles.cartItems}>
                 {cart.length > 0 ? (
@@ -54,19 +62,21 @@ const Carrito = () => {
                             <Image src={item.image} alt={item.title} width={100} height={100} className={styles.cartImage} />
                             <Box className={styles.itemDetails}>
                                 <Typography variant="h6" className={styles.itemTitle}>{item.title}</Typography>
-                                <Typography variant="body1" className={styles.itemPrice}>{item.price || '$0'}</Typography>
-                                <Button
-                                    variant="contained"
-                                    color="secondary"
-                                    onClick={() => handleRemoveItem(item)}
-                                >
-                                    Remove
-                                </Button>
+                                <Typography variant="body1" className={styles.itemPrice}>{item.price || '$1'}</Typography>
                             </Box>
+                            <IconButton 
+                                onClick={() => handleRemoveItem(item)} 
+                                className={styles.removeIconButton}
+                            >
+                                <ClearIcon />
+                            </IconButton>
                         </Box>
                     ))
                 ) : (
-                    <Typography variant="h6">Your cart is empty</Typography>
+                    <Box className={styles.emptyCartContainer}>
+                        <Typography className={styles.emptyCartText} >Tu carrito esta vacio!</Typography>
+                        <Typography className={styles.emptyCartText} >Ve a agregar mas recetas!</Typography>
+                    </Box>
                 )}
             </Box>
             {cart.length > 0 && (

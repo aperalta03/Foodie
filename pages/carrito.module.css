@@ -27,6 +27,10 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+.volverButton:hover {
+    background-color: var(--primaryfade-color);
+    transform: scale(1.05);
+}
 
 .cartItems {
     flex: 1;
@@ -43,11 +47,12 @@
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
     border-radius: 8px;
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cartItem:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -60,6 +65,7 @@
 .itemDetails {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .itemTitle {
@@ -72,6 +78,19 @@
     font-size: 1rem;
     color: black;
     margin-top: 5px;
+}
+
+.removeIconButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.removeIconButton:hover {
+    color: darkred;
+    transform: scale(1.2);
 }
 
 .checkoutContainer {
@@ -91,6 +110,25 @@
 }
 
 .checkoutButton:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primaryfade-color);
+    transform: scale(1.1);
+}
+/* Empty Cart */
+.emptyCartContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.emptyCartText {
+    font-size: 3rem;
+    font-family: var(--font-family);
+    font-weight: bold;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.emptyCartText:hover {
     transform: scale(1.1);
 }
