@@ -10,6 +10,10 @@ import styles from './carrito.module.css';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ClearIcon from '@mui/icons-material/Clear';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+
 
 const Carrito = () => {
     const [cart, setCart] = useState([]);
@@ -31,8 +35,29 @@ const Carrito = () => {
         router.back();
     };
 
-    const handleCheckout = () => {
-        console.log('Proceed to checkout');
+
+    const handleCheckout = async () => {
+        const stripe = await stripePromise;
+
+        // Call your API route to create a checkout session
+        const response = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ cart, userId: user.uid }),
+        });
+
+        const session = await response.json();
+
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id,
+        });
+
+        if (result.error) {
+            console.error(result.error.message);
+        }
     };
 
     const handleRemoveItem = async (item) => {

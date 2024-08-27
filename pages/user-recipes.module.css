@@ -15,8 +15,18 @@
     font-weight: bold;
 }
 
-.searchBar {
+.searchContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+.searchBar {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .recipeContainer {
@@ -27,8 +37,8 @@
 }
 
 .navButton {
-    color: var(--primary-color);
-    background-color: transparent;
+    color: white;
+    background-color: var(--primary-color);
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -44,6 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .pdfFrame {
@@ -52,6 +63,19 @@
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+}
+
+.gohome{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
