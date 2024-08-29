@@ -14,8 +14,8 @@ const Loading = () => {
 
   return (
     <Container className={styles.container} maxWidth={false}>
-      <CircularProgress color="secondary" size={100}/>
-      <Typography className={styles.title}> Loading...</Typography>
+      <CircularProgress color="primary" size={100}/>
+      <Typography className={styles.title}></Typography>
     </Container> 
   );
 };

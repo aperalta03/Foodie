@@ -121,7 +121,7 @@ const UserRecipes = () => {
                     </Box>
                     {filteredRecipes.length === 0 ? (
                         <Typography className={styles.errorText}>
-                            No se encontraron recetas para "{searchTerm}".
+                        No se encontraron recetas para &quot;{searchTerm}&quot;.
                         </Typography>
                     ) : (
                         <Box className={styles.recipeContainer}>
