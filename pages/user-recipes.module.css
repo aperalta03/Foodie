@@ -25,19 +25,19 @@
 }
 .gohome {
     background-color: var(--primary-color) !important;
-    color: white;
-    border-radius: 8px;
-    padding: 10px;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
     font-size: 1.25rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     gap: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease !important;
+    margin-right: 10px !important;
 }
 .gohome:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
     background-color: var(--primaryfade-color) !important;
 }
 .searchBar {
@@ -77,18 +77,18 @@
 /* Action Buttons */
 .actionButtons {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 10px !important;
+    margin-top: 10px !important;
 }
 .actionButton {
-    color: white;
+    color: white !important;
     background-color: var(--primary-color) !important;
     border-radius: 50%;
-    padding: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 10px !important;
+    transition: background-color 0.3s ease, transform 0.3s ease !important;
 }
 .actionButton:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
     background-color: var(--primaryfade-color) !important;
 }
 /* Error Text */

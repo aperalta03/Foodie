@@ -52,5 +52,68 @@
         "image":"/recipes/R6_postre-quinua.png",
         "video":"/recipes/R6_postre-quinua.mp4",
         "recipe":"/recipes/R6_postre-quinua.pdf"
+    },
+    {
+        "title":"Ensalada Fresca de Garbanzos",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R7_ensaladadelicia-garbanzo.png",
+        "video":"/recipes/R7_ensaladadelicia-garbanzo.mp4",
+        "recipe":"/recipes/ensalada_fresca_de_garbanzos.pdf"
+    },
+    {
+        "title":"Ensalada Power de Garbanzos",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R8_ensaladapower-garbanzo.png",
+        "video":"/recipes/R8_ensaladapower-garbanzo.mp4",
+        "recipe":"/recipes/ensalada_power_de_garbanzos.pdf"
+    },
+    {
+        "title":"Nuggets Vegetarianos",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R9_nuggets-vegetarianos.png",
+        "video":"/recipes/R9_nuggets-vegetarianos.mp4",
+        "recipe":"/recipes/nuggets_vegetarianos.pdf"
+    },
+    {
+        "title":"Muffin de Manzana y Avena",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R10_muffin-manzana-avena.png",
+        "video":"/recipes/R10_muffin-manzana-avena.mp4",
+        "recipe":"/recipes/muffin_de_manzana_y_avena.pdf"
+    },
+    {
+        "title":"Galleta de Avena y Chocolate",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R11_galleta-avena-chocolate.png",
+        "video":"/recipes/R11_galleta-avena-chocolate.mp4",
+        "recipe":"/recipes/galleta_de_avena_y_chocolate.pdf"
+    },
+    {
+        "title":"Galleta Dos Ingredientes",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R12_galletas-dos.png",
+        "video":"/recipes/R12_galletas-dos.mp4",
+        "recipe":"/recipes/galleta_dos_ingredientes.pdf"
+    },
+    {
+        "title":"Nube de Coco",
+        "description":"Description",
+        "calories":"100 Calorias",
+        "tags":["Gluten Free", "Vegan", "Vegetarian"],
+        "image":"/recipes/R13_nube-coco.png",
+        "video":"/recipes/R13_nube-coco.mp4",
+        "recipe":"/recipes/nube_de_coco.pdf"
     }
 ]
