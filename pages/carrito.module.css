@@ -1,3 +1,4 @@
+/* Main Container */
 .carritoPage {
     display: flex;
     flex-direction: column;
@@ -11,13 +12,11 @@
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-
 .header {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
 }
-
 .volverButton {
     background-color: var(--primary-color);
     color: white;
@@ -31,7 +30,6 @@
     background-color: var(--primaryfade-color);
     transform: scale(1.05);
 }
-
 .cartItems {
     flex: 1;
     display: flex;
@@ -39,7 +37,6 @@
     gap: 20px;
     padding-right: 5vw;
 }
-
 .cartItem {
     display: flex;
     align-items: center;
@@ -50,36 +47,30 @@
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .cartItem:hover {
     transform: scale(1.01);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 .cartImage {
     border-radius: 8px;
     object-fit: cover;
     margin-right: 20px;
 }
-
 .itemDetails {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
-
 .itemTitle {
     font-size: 1.25rem;
     color: var(--primary-color);
     font-weight: bold;
 }
-
 .itemPrice {
     font-size: 1rem;
     color: black;
     margin-top: 5px;
 }
-
 .removeIconButton {
     position: absolute;
     top: 10px;
@@ -87,18 +78,15 @@
     color: red;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 .removeIconButton:hover {
     color: darkred;
     transform: scale(1.2);
 }
-
 .checkoutContainer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-
 .checkoutButton {
     padding: 10px 20px;
     font-size: 1.25rem;
@@ -108,7 +96,6 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 .checkoutButton:hover {
     background-color: var(--primaryfade-color);
     transform: scale(1.1);

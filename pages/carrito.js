@@ -14,6 +14,22 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
+export const clearCart = async (user) => {
+    if (user) {
+        const userDocRef = doc(db, 'users', user.uid);
+
+        try {
+            await updateDoc(userDocRef, {
+                cart: [],  // Empty the cart
+            });
+            console.log('Cart has been cleared.');
+        } catch (error) {
+            console.error('Error clearing cart:', error);
+        }
+    } else {
+        console.error('No user found for clearing the cart.');
+    }
+};  
 
 const Carrito = () => {
     const [cart, setCart] = useState([]);
@@ -67,7 +83,7 @@ const Carrito = () => {
                 cart: arrayRemove(item)
             });
         }
-    };
+    };  
 
     return (
         <Box className={styles.carritoPage}>
@@ -77,7 +93,7 @@ const Carrito = () => {
                     onClick={handleBackClick} 
                     className={styles.volverButton}
                 >
-                    <ArrowBackIcon />
+                    <ArrowBackIcon />   
                 </IconButton> 
             </Box>
             <Box className={styles.cartItems}>

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { doc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { db, auth } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { clearCart } from './carrito';  // Import the updated clearCart function
 
 const Success = () => {
     const router = useRouter();
@@ -21,17 +22,18 @@ const Success = () => {
                 if (user) {
                     const userDocRef = doc(db, 'users', user.uid);
 
-                    // Get the PDF paths from the session data (assuming session data includes this info)
+                    // Get the PDF paths from the session data
                     const purchasedPDFs = session.line_items.data.map((item) => {
-                        // Assuming you have the PDF path in the session or you can generate it
                         return `/recipes/${item.description.replace(/\s/g, '_').toLowerCase()}.pdf`;
                     });
 
                     if (purchasedPDFs.length > 0) {
+                        // Update the user's Firestore document with the purchased PDFs
                         await updateDoc(userDocRef, {
                             recipes: arrayUnion(...purchasedPDFs),
                         });
-                        router.push('/user-recipes');
+                        await clearCart(user);
+                        router.push('/home');
                     } else {
                         console.error('No line items found in the session');
                     }
@@ -40,12 +42,10 @@ const Success = () => {
                 console.error('Error fetching session:', error);
             }
         };
-
         if (session_id) {
             fetchSession();
         }
     }, [session_id, user, router]);
-
     return <div>Loading...</div>;
 };
 

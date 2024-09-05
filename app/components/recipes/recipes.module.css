@@ -4,8 +4,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding-top: 10vh;
     padding-bottom: 5vh;
+    padding-top: 1vh;
     padding-left: 10vw;
     padding-right: 10vw;
     height: 100%;
@@ -63,4 +63,26 @@
 }
 .recipeCard:hover .recipeContent {
     opacity: 1;
+}
+
+@media only screen and (max-width: 480px) {
+    .recipesContainer {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        gap: 10px;
+    }
+    .recipeCard {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+    .recipeImage {
+        height: 100%;
+    }
+    .recipeContent {
+        padding: 10px;
+    }
+    .recipeCard:hover {
+        transform: none;
+    }
 }

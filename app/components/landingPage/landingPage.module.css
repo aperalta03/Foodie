@@ -116,7 +116,6 @@
     gap: 2vw;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
 }
 .socialBubble {
     height: 60px;
@@ -196,4 +195,41 @@
     object-fit: cover;
     position: relative;
     z-index: 0;
+}
+@media only screen and (max-width: 480px) {
+    .profilePicture {
+        display: none;
+    }
+    .contentContainer {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .line {
+        margin-left: 0;
+    }
+    .indented {
+        margin-left: 20px;
+    }
+    .socialsContainer {
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+        top: 5px;
+        left: 5px;
+    }
+    .socialBubble {
+        height: 50px;
+        width: 50px;
+    }
+    .socialIcon {
+        height: 40%;
+        width: 40%;
+    }
 }

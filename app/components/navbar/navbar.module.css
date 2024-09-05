@@ -98,3 +98,20 @@
     flex-direction: row;
     margin-left: 20vw;
 }
+
+@media only screen and (max-width: 480px) {
+    .navbar {
+        height: 60px;
+        padding: 0 10px;
+    }
+    .logoNavbar {
+        width: 60px;
+        height: 60px;
+    }
+    .socialsNavbarContainer {
+        display: none;
+    }
+    .userButton {
+        margin-left: auto;
+    }
+}

@@ -1,3 +1,4 @@
+/* User Button */
 .userButtonContainer {
     position: relative;
     display: flex;
@@ -7,7 +8,7 @@
 .personIcon {
     width: 100%;
     height: auto;
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .personIcon:hover {
@@ -25,10 +26,10 @@
     min-width: 200px;
     text-align: left;
 }
-
+/* Nav Button */
 .navButton,
 .cartButton {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     text-transform: none;
     justify-content: flex-start;
     padding: 8px 16px;
@@ -37,13 +38,11 @@
     display: flex;
     align-items: center;
 }
-
 .navButton:hover,
 .cartButton:hover {
     background-color: transparent;
     transform: scale(1.05);
 }
-
 .cartIcon {
     margin-right: 10px;
     font-size: 1.5rem;
