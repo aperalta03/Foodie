@@ -101,7 +101,7 @@ const UserRecipes = () => {
         <>
           {filteredRecipes.length === 0 ? (
             <Typography className={styles.errorText}>
-              No se encontraron recetas para "{searchTerm}".
+              No se encontraron recetas para &quot;{searchTerm}&quot;.
             </Typography>
           ) : (
             <Box className={styles.recipesGrid}>
@@ -114,16 +114,10 @@ const UserRecipes = () => {
                   />
                   {/* Action buttons placed outside of the iframe */}
                   <Box className={styles.actionButtons}>
-                    <IconButton
-                      onClick={() => handleDownload(recipe)}
-                      className={styles.actionButton}
-                    >
+                    <IconButton onClick={() => handleDownload(recipe)} className={styles.actionButton}>
                       <DownloadIcon />
                     </IconButton>
-                    <IconButton
-                      onClick={() => handlePrint(recipe)}
-                      className={styles.actionButton}
-                    >
+                    <IconButton onClick={() => handlePrint(recipe)} className={styles.actionButton}>
                       <PrintIcon />
                     </IconButton>
                   </Box>
