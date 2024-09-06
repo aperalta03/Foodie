@@ -93,11 +93,11 @@
 }
 /* Error Text */
 .errorText {
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
+    color: var(--text-color) !important;
+    font-family: var(--font-family) !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
 }
 /* Mobile View */
 @media (max-width: 768px) {

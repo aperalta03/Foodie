@@ -196,7 +196,30 @@
     position: relative;
     z-index: 0;
 }
-@media only screen and (max-width: 480px) {
+@media (max-width: 768px) {
+    .Page {
+        background-size: auto;
+        background-attachment: fixed;
+    }
+    /* Ribbon */
+    .ribbon {
+        top: 10vh;
+        left: -50vw;
+        width: 160vw;
+        transform: rotate(-45deg);
+    }
+    .ribbon::before,
+    .ribbon::after {
+        height: 50px;
+        background: linear-gradient(
+            135deg, 
+            rgba(255, 255, 255, 0.3) 5%, 
+            var(--primary-color) 40%, 
+            rgba(255, 255, 255, 0.3) 80%, 
+            var(--primary-color) 60%, 
+            var(--primary-color) 100%
+        );
+    }
     .profilePicture {
         display: none;
     }
