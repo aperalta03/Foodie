@@ -62,7 +62,7 @@ const Authentication = () => {
                 <DialogContent>
                     <TextField
                         margin="dense"
-                        label="Email Address"
+                        label="Email - Correo"
                         type="email"
                         fullWidth
                         variant="outlined"
@@ -91,7 +91,7 @@ const Authentication = () => {
                     />
                     <TextField
                         margin="dense"
-                        label="Password"
+                        label="Contraseña"
                         type="password"
                         fullWidth
                         variant="outlined"
@@ -141,7 +141,7 @@ const Authentication = () => {
                 <DialogContent>
                     <TextField
                         margin="dense"
-                        label="Email Address"
+                        label="Email - Correo"
                         type="email"
                         fullWidth
                         variant="outlined"
@@ -170,7 +170,7 @@ const Authentication = () => {
                     />
                     <TextField
                         margin="dense"
-                        label="Password"
+                        label="Contraseña"
                         type="password"
                         fullWidth
                         variant="outlined"

@@ -11,18 +11,17 @@
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
-}
-/* For WebKit browsers (e.g., Chrome, Safari) */
-.Page::-webkit-scrollbar {
-    display: none;
-}
-
-/* For Firefox */
-.Page {
     scrollbar-width: none; /* For Firefox */
-}
-
-/* For Internet Explorer and Edge */
-.Page {
     -ms-overflow-style: none; /* For IE and Edge */
+}
+.Page::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit - Chrome, Safari and Opera */
+}
+/* Mobile View */
+@media (max-width: 768px) {
+    .Page {
+        background-attachment: scroll;
+        background-size: contain;
+        background-position: top center; 
+    }
 }
