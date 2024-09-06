@@ -1,25 +1,29 @@
 .Page {
     display: flex;
     flex-direction: column;
-    min-height: 200vh;
+    min-height: 100vh;
     background: var(--background-color);
     background-image: url('/parallax.png');
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: center center;
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
+}
+
+.Page::-webkit-scrollbar {
+    display: none;
+}
+
+.Page {
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For IE and Edge */
 }
-.Page::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit - Chrome, Safari and Opera */
-}
-/* Mobile View */
+
 @media (max-width: 768px) {
     .Page {
-        
+        background-attachment: scroll;
+        background-size: cover;
     }
 }

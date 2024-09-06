@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box } from '@mui/material';
 import Image from 'next/image';
 
 import logo from '../../../public/logo.png';
@@ -19,21 +19,35 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 
 const iconMap = {
-    'youtube': YouTubeIcon,
-    'instagram': InstagramIcon,
-    'email': EmailIcon,
-    'whatsapp': WhatsAppIcon,
-    'tiktok': LibraryMusicIcon,
+    youtube: YouTubeIcon,
+    instagram: InstagramIcon,
+    email: EmailIcon,
+    whatsapp: WhatsAppIcon,
+    tiktok: LibraryMusicIcon,
 };
 
 const LandingPage = () => {
+    useEffect(() => {
+        const handleScroll = () => {
+            const page = document.querySelector('.Page');
+            const scrollPosition = window.scrollY;
+            if (page) {
+                page.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <Box className={styles.Page}>
+        <Box className={`${styles.Page} Page`}>
             <Navbar />
             <Box className={styles.mainContainer}>
                 <Box className={styles.ribbon}></Box>
                 <Box className={styles.contentContainer}>
-                    <Image src={logo} alt='Marina Espinoza' className={styles.logo} width={100} height={100}/>
+                    <Image src={logo} alt="Marina Espinoza" className={styles.logo} width={100} height={100} />
                     <Box className={styles.textContainer}>
                         <Box className={styles.title}>
                             <Box className={styles.line}>
