@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Button, Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
-import { createUserWithEmailAndPassword } from 'firebase/auth'; // Import Firebase Auth method
-import { auth } from '@/firebase'; // Adjust the import based on your file structure
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'; // Import Google Auth provider and signIn method
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '@/firebase'; 
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 import styles from './authentication.module.css';
 
@@ -23,7 +23,7 @@ const Authentication = () => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             console.log('User registered:', userCredential.user);
-            handleRegisterClose(); // Close the dialog after successful registration
+            handleRegisterClose();
         } catch (error) {
             console.error('Error registering user:', error);
         }
@@ -33,7 +33,7 @@ const Authentication = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log('User logged in:', userCredential.user);
-            handleLoginClose(); // Close the dialog after successful login
+            handleLoginClose();
         } catch (error) {
             console.error('Error logging in user:', error);
         }
@@ -44,7 +44,7 @@ const Authentication = () => {
         try {
             const result = await signInWithPopup(auth, provider);
             console.log('User signed in with Google:', result.user);
-            handleLoginClose(); // Close the dialog after successful login
+            handleLoginClose();
         } catch (error) {
             console.error('Error with Google sign-in:', error);
         }
@@ -120,16 +120,19 @@ const Authentication = () => {
                     />
                 </DialogContent>
                 <DialogActions classes={{ root: styles.dialogActionsRoot }}>
-                    <Button
-                        fullWidth
-                        startIcon={<GoogleIcon />}
-                        onClick={handleGoogleAuth}
-                        classes={{ root: styles.googleButton }}
-                    >
-                        Login con Google
-                    </Button>
-                    <Button onClick={handleLoginClose} classes={{ root: styles.cancelButton }}>Cancelar</Button>
-                    <Button onClick={handleLogin} classes={{ root: styles.loginButton }}>Login</Button>
+                    <Box className={styles.authFirstRow}>
+                        <Button
+                            fullWidth
+                            startIcon={<GoogleIcon />}
+                            onClick={handleGoogleAuth}
+                            classes={{ root: styles.googleButton }}
+                            disableRipple
+                        >
+                            <p>Login con Google</p>
+                        </Button>
+                        <Button onClick={handleLogin} classes={{ root: styles.loginButton }}><p>Login</p></Button>
+                    </Box>
+                    <Button onClick={handleLoginClose} classes={{ root: styles.cancelButton }}><p>Cancelar</p></Button>
                 </DialogActions>
             </Dialog>
             {/* Register Dialog */}
@@ -196,16 +199,18 @@ const Authentication = () => {
                     />
                 </DialogContent>
                 <DialogActions classes={{ root: styles.dialogActionsRoot }}>
-                    <Button
-                        fullWidth
-                        startIcon={<GoogleIcon />}
-                        onClick={handleGoogleAuth}
-                        classes={{ root: styles.googleButton }}
-                    >
-                        Registrate con Google
-                    </Button>
-                    <Button onClick={handleRegisterClose} classes={{ root: styles.cancelButton }}>Cancelar</Button>
-                    <Button onClick={handleRegister} classes={{ root: styles.registerButton }}>Registrate</Button>
+                    <Box className={styles.authFirstRow}>
+                        <Button
+                            fullWidth
+                            startIcon={<GoogleIcon />}
+                            onClick={handleGoogleAuth}
+                            classes={{ root: styles.googleButton }}
+                        >
+                            <p>Registrate con Google</p>
+                        </Button>
+                        <Button onClick={handleRegister} classes={{ root: styles.registerButton }}><p>Registrate</p></Button>
+                    </Box>
+                    <Button onClick={handleRegisterClose} classes={{ root: styles.cancelButton }}><p>Cancelar</p></Button>
                 </DialogActions>
             </Dialog>
         </Box>
