@@ -197,7 +197,9 @@
 }
 @media (max-width: 768px) {
     .Page {
-        background-size: cover; /* Ensures that the background adjusts for mobile */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
     }
     /* Ribbon */
     .ribbon {

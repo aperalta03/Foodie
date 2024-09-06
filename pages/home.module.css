@@ -23,7 +23,6 @@
 
 @media (max-width: 768px) {
     .Page {
-        background-attachment: scroll;
-        background-size: cover;
+        background-image: none;
     }
 }
