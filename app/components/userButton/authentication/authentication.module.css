@@ -3,10 +3,12 @@
     flex-direction: row;
 }
 .navButton {
-    color: white;
+    color: var(--text-color) !important;
     background-color: var(--primary-color) !important;
-    margin-right: 10px;
+    margin-right: 10px !important;
     text-transform: none;
+    font-family: var(--font-family2) !important;
+    font-style: italic !important;
 }
 .dialogPaper {
     border-radius: 20px;
@@ -58,6 +60,7 @@
     .authFirstRow {
         gap: 10px;
         width: 100%;
+        justify-content: space-between;
     }    
     .googleButton p {
         display: none;   
