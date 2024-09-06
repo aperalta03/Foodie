@@ -198,9 +198,9 @@
 }
 @media (max-width: 768px) {
     .Page {
-        background-attachment: scroll;
-        background-size: contain;
-        background-position: top center; 
+        background-attachment: fixed;
+        background-size: auto 100%;
+        background-position: top center;
     }
     /* Ribbon */
     .ribbon {
