@@ -199,7 +199,7 @@
 @media (max-width: 768px) {
     .Page {
         background-attachment: scroll;
-        background-size: contain;
+        background-size: auto 100%;
         background-position: top center; 
     }
     /* Ribbon */
