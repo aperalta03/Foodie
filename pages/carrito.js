@@ -48,7 +48,7 @@ const Carrito = () => {
     }, [user]);
 
     const handleBackClick = () => {
-        router.back();
+        router.push('/home');
     };
 
 
