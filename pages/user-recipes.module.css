@@ -7,6 +7,12 @@
     justify-content: flex-start;
     min-height: 100vh;
     background: url('/parallax.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Navbar */
@@ -103,9 +109,7 @@
 @media (max-width: 768px) {
     /* Page */
     .pageContainer {
-        background-attachment: fixed;
-        background-size: auto 100%;
-        background-position: top center;         
+               
     }
     /* Navbar */
     .navbar {

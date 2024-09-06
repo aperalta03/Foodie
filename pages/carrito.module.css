@@ -125,9 +125,6 @@
     .carritoPage {
         padding: 5vh 3vw;
         min-height: 100vh;
-        background-attachment: fixed;
-        background-size: auto 100%;
-        background-position: top center; 
     }
     /* Header */
     .header {
