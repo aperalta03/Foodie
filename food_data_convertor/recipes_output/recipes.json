@@ -1,0 +1,15 @@
+[
+    {
+        "title": "Ensalada Delicia Con Garbanzos",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": [
+            "Gluten Free",
+            "Vegan",
+            "Vegetarian"
+        ],
+        "image": "/recipes/ensalada_delicia_con_garbanzos.png",
+        "video": "/recipes/ensalada_delicia_con_garbanzos.mp4",
+        "recipe": "/recipes/ensalada_delicia_con_garbanzos.pdf"
+    }
+]

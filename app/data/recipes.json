@@ -1,119 +1,119 @@
 [
     {
-        "title":"Delicia Fresca de Lentejas",
-        "description":"Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description ",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R1_deliciafresca-lentejas.png",
-        "video":"/recipes/R1_deliciafresca-lentejas.mp4",
-        "recipe": "/recipes/R1_deliciafresca-lentejas.pdf"
+        "title": "Delicia Fresca de Lentejas",
+        "description": "Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/delicia_fresca_de_lentejas.png",
+        "video": "/recipes/delicia_fresca_de_lentejas.mp4",
+        "recipe": "/recipes/delicia_fresca_de_lentejas.pdf"
     },
     {
-        "title":"Ensalada de Lentejas",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R2_ensalada-lentejas.png",
-        "video":"/recipes/R2_ensalada-lentejas.mp4",
-        "recipe":"/recipes/R2_ensalada-lentejas.pdf"
+        "title": "Ensalada de Lentejas",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/ensalada_de_lentejas.png",
+        "video": "/recipes/ensalada_de_lentejas.mp4",
+        "recipe": "/recipes/ensalada_de_lentejas.pdf"
     },
     {
-        "title":"Chaufa de Quinua",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R3_chaufa-quinua.png",
-        "video":"/recipes/R3_chaufa-quinua.mp4",
-        "recipe":"/recipes/R3_chaufa-quinua.pdf"
+        "title": "Chaufa de Quinua",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/chaufa_de_quinua.png",
+        "video": "/recipes/chaufa_de_quinua.mp4",
+        "recipe": "/recipes/chaufa_de_quinua.pdf"
     },
     {
-        "title":"Tortitas de Quinua",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R4_tortitas-quinua.png",
-        "video":"/recipes/R4_tortitas-quinua.mp4",
-        "recipe":"/recipes/R4_tortitas-quinua.pdf"
+        "title": "Tortitas de Quinua",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/tortitas_de_quinua.png",
+        "video": "/recipes/tortitas_de_quinua.mp4",
+        "recipe": "/recipes/tortitas_de_quinua.pdf"
     },
     {
-        "title":"Ensalada de Quinua",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R5_ensalada-quinua.png",
-        "video":"/recipes/R5_ensalada-quinua.mp4",
-        "recipe":"/recipes/R5_ensalada-quinua.pdf"
+        "title": "Ensalada de Quinua",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/ensalada_de_quinua.png",
+        "video": "/recipes/ensalada_de_quinua.mp4",
+        "recipe": "/recipes/ensalada_de_quinua.pdf"
     },
     {
-        "title":"Postre de Quinua",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R6_postre-quinua.png",
-        "video":"/recipes/R6_postre-quinua.mp4",
-        "recipe":"/recipes/R6_postre-quinua.pdf"
+        "title": "Postre de Quinua",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/postre_de_quinua.png",
+        "video": "/recipes/postre_de_quinua.mp4",
+        "recipe": "/recipes/postre_de_quinua.pdf"
     },
     {
-        "title":"Ensalada Fresca de Garbanzos",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R7_ensaladadelicia-garbanzo.png",
-        "video":"/recipes/R7_ensaladadelicia-garbanzo.mp4",
-        "recipe":"/recipes/ensalada_fresca_de_garbanzos.pdf"
+        "title": "Ensalada Fresca de Garbanzos",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/ensalada_fresca_de_garbanzos.png",
+        "video": "/recipes/ensalada_fresca_de_garbanzos.mp4",
+        "recipe": "/recipes/ensalada_fresca_de_garbanzos.pdf"
     },
     {
-        "title":"Ensalada Power de Garbanzos",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R8_ensaladapower-garbanzo.png",
-        "video":"/recipes/R8_ensaladapower-garbanzo.mp4",
-        "recipe":"/recipes/ensalada_power_de_garbanzos.pdf"
+        "title": "Ensalada Power de Garbanzos",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/ensalada_power_de_garbanzos.png",
+        "video": "/recipes/ensalada_power_de_garbanzos.mp4",
+        "recipe": "/recipes/ensalada_power_de_garbanzos.pdf"
     },
     {
-        "title":"Nuggets Vegetarianos",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R9_nuggets-vegetarianos.png",
-        "video":"/recipes/R9_nuggets-vegetarianos.mp4",
-        "recipe":"/recipes/nuggets_vegetarianos.pdf"
+        "title": "Nuggets Vegetarianos",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/nuggets_vegetarianos.png",
+        "video": "/recipes/nuggets_vegetarianos.mp4",
+        "recipe": "/recipes/nuggets_vegetarianos.pdf"
     },
     {
-        "title":"Muffin de Manzana y Avena",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R10_muffin-manzana-avena.png",
-        "video":"/recipes/R10_muffin-manzana-avena.mp4",
-        "recipe":"/recipes/muffin_de_manzana_y_avena.pdf"
+        "title": "Muffin de Manzana y Avena",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/muffin_de_manzana_y_avena.png",
+        "video": "/recipes/muffin_de_manzana_y_avena.mp4",
+        "recipe": "/recipes/muffin_de_manzana_y_avena.pdf"
     },
     {
-        "title":"Galleta de Avena y Chocolate",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R11_galleta-avena-chocolate.png",
-        "video":"/recipes/R11_galleta-avena-chocolate.mp4",
-        "recipe":"/recipes/galleta_de_avena_y_chocolate.pdf"
+        "title": "Galleta de Avena y Chocolate",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/galleta_de_avena_y_chocolate.png",
+        "video": "/recipes/galleta_de_avena_y_chocolate.mp4",
+        "recipe": "/recipes/galleta_de_avena_y_chocolate.pdf"
     },
     {
-        "title":"Galleta Dos Ingredientes",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R12_galletas-dos.png",
-        "video":"/recipes/R12_galletas-dos.mp4",
-        "recipe":"/recipes/galleta_dos_ingredientes.pdf"
+        "title": "Galleta Dos Ingredientes",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/galleta_dos_ingredientes.png",
+        "video": "/recipes/galleta_dos_ingredientes.mp4",
+        "recipe": "/recipes/galleta_dos_ingredientes.pdf"
     },
     {
-        "title":"Nube de Coco",
-        "description":"Description",
-        "calories":"100 Calorias",
-        "tags":["Gluten Free", "Vegan", "Vegetarian"],
-        "image":"/recipes/R13_nube-coco.png",
-        "video":"/recipes/R13_nube-coco.mp4",
-        "recipe":"/recipes/nube_de_coco.pdf"
+        "title": "Nube de Coco",
+        "description": "Description",
+        "calories": "100 Calorias",
+        "tags": ["Gluten Free", "Vegan", "Vegetarian"],
+        "image": "/recipes/nube_de_coco.png",
+        "video": "/recipes/nube_de_coco.mp4",
+        "recipe": "/recipes/nube_de_coco.pdf"
     }
 ]
