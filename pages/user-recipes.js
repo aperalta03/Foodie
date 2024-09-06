@@ -15,6 +15,7 @@ const UserRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [isMobileView, setIsMobileView] = useState(false); // New state for mobile view
   const router = useRouter();
 
   useEffect(() => {
@@ -39,6 +40,26 @@ const UserRecipes = () => {
       setFilteredRecipes(results);
     }
   }, [searchTerm, recipes]);
+
+  useEffect(() => {
+    // Check if it's mobile view
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobileView(true);
+      } else {
+        setIsMobileView(false);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -108,11 +129,11 @@ const UserRecipes = () => {
               {filteredRecipes.map((recipe, index) => (
                 <Box key={index} className={styles.pdfContainer}>
                   <iframe   
-                    src={`${recipe}#toolbar=0`}
+                    src={`${recipe}${isMobileView ? '#toolbar=0&zoom=75' : '#toolbar=0'}`}  // Conditional zoom
                     title={`Recipe ${index + 1}`}
                     className={styles.pdfFrame}
                   />
-                  {/* Action buttons placed outside of the iframe */}
+                  {/* Action buttons */}
                   <Box className={styles.actionButtons}>
                     <IconButton onClick={() => handleDownload(recipe)} className={styles.actionButton}>
                       <DownloadIcon />
