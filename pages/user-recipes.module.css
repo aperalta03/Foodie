@@ -101,6 +101,10 @@
 }
 /* Mobile View */
 @media (max-width: 768px) {
+    /* Page */
+    .pageContainer {
+        background-size: cover;
+    }
     /* Navbar */
     .navbar {
         flex-direction: row;
@@ -121,6 +125,7 @@
         white-space: nowrap;
         padding: 0;
         width: 100vw;
+        margin-bottom: 2vh;
     }
     /* PDF Container */
     .pdfContainer {
