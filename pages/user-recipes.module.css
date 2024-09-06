@@ -103,7 +103,9 @@
 @media (max-width: 768px) {
     /* Page */
     .pageContainer {
-        background-size: cover;
+        background-attachment: fixed;
+        background-size: auto 100%;
+        background-position: top center;         
     }
     /* Navbar */
     .navbar {

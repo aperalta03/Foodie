@@ -9,6 +9,7 @@
     padding-left: 10vw;
     padding-right: 10vw;
     height: 100%;
+    background-color: transparent;
 }
 .recipeCard {
     flex: 1 1 calc(25% - 40px);
