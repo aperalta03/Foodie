@@ -31,13 +31,11 @@ const LandingPage = () => {
         const handleScroll = () => {
             const page = document.querySelector('.Page');
             const scrollPosition = window.scrollY;
-            if (page) {
+            if (window.innerWidth > 768 && page) {
                 page.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
             }
         };
-
         window.addEventListener('scroll', handleScroll);
-        
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
