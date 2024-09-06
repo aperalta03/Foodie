@@ -63,9 +63,9 @@
 .description {
     margin-top: 20px;
     margin-bottom: 20px;
-    white-space: normal; /* Allows wrapping */
-    word-break: normal; /* Prevents breaking words */
-    overflow-wrap: normal; /* Ensures words only break at normal breakpoints */
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 .buttonsContainer {
     margin-top: 20px;
@@ -83,4 +83,40 @@
 }
 .volverButton:hover, .addToCartButton:hover {
     background-color: var(--primaryfade-color);
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .recipeContainer {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .leftPane {
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .rightPane {
+        width: 100% !important;
+        padding: 0;
+    }
+    .recipeDetails {
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .title {
+        font-size: 1.3rem !important;
+    }
+    .calories {
+        font-size: 0.875rem !important;
+    }
+    .buttonsContainer {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .volverButton, .addToCartButton {
+        width: 25%;
+        padding: 15px;
+        font-size: 1rem;
+    }
 }
