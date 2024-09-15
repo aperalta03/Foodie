@@ -42,7 +42,7 @@ const Home = () => {
         <Box className={styles.Page}>
             <Navbar navbarVisible={navbarVisible} sticky={sticky} />
             <LandingPage />
-            <Recipes recipes={recipes} />
+            
         </Box>
     );
 };
